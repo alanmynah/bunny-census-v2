@@ -3,6 +3,8 @@
   <component name="ContentModelStore">
     <e p="$USER_HOME$/Library/Caches/Rider2018.3/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2018.3/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_api.-1299139738.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="api.csproj" t="IncludeRecursive" />
       <e p="api.sln" t="IncludeFlat" />
@@ -10,7 +12,16 @@
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
-        <e p="ValuesController.cs" t="Include" />
+        <e p="CensusController.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20190114102540_InitialModel.cs" t="Include" />
+        <e p="20190114102540_InitialModel.Designer.cs" t="Include" />
+        <e p="CensusDbContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="Bunny.cs" t="Include" />
+        <e p="Census.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
@@ -20,6 +31,9 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="Persistence" t="Include">
+        <e p="CensusDbContext.cs" t="Include" />
+      </e>
       <e p="Program.cs" t="Include" />
       <e p="Properties" t="Include">
         <e p="launchSettings.json" t="Include" />
