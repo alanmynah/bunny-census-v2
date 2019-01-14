@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api.Persistence;
 
 namespace api.Migrations
 {
     [DbContext(typeof(CensusDbContext))]
-    partial class CensusDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190114120219_InitialModel")]
+    partial class InitialModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,20 +26,15 @@ namespace api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Colour")
-                        .IsRequired()
-                        .HasMaxLength(255);
+                    b.Property<string>("Colour");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255);
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Residence")
-                        .IsRequired();
+                    b.Property<string>("Residence");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Bunnies");
+                    b.ToTable("Bunny");
                 });
 
             modelBuilder.Entity("api.Models.Census", b =>

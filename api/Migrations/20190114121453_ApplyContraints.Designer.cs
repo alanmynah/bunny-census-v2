@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api.Persistence;
 
 namespace api.Migrations
 {
     [DbContext(typeof(CensusDbContext))]
-    partial class CensusDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190114121453_ApplyContraints")]
+    partial class ApplyContraints
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,8 +27,7 @@ namespace api.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Colour")
-                        .IsRequired()
-                        .HasMaxLength(255);
+                        .IsRequired();
 
                     b.Property<string>("Name")
                         .IsRequired()

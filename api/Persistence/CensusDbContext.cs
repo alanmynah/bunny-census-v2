@@ -1,3 +1,4 @@
+using api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace api.Persistence
@@ -7,6 +8,8 @@ namespace api.Persistence
         public CensusDbContext(DbContextOptions<CensusDbContext> options) : base(options)
         {
             
-        }   
+        }
+
+        public DbSet<Census> Census { get; set; }
     }
 }
