@@ -24,11 +24,13 @@
         <e p="20190114121657_ApplyContraintsForColour.Designer.cs" t="Include" />
         <e p="20190114140700_SeedDatabase.cs" t="Include" />
         <e p="20190114140700_SeedDatabase.Designer.cs" t="Include" />
+        <e p="20190115160535_RenameCensusToCensusEntry.cs" t="Include" />
+        <e p="20190115160535_RenameCensusToCensusEntry.Designer.cs" t="Include" />
         <e p="CensusDbContextModelSnapshot.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
         <e p="Bunny.cs" t="Include" />
-        <e p="Census.cs" t="Include" />
+        <e p="CensusEntry.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">

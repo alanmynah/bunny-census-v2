@@ -10,6 +10,7 @@ namespace api.Persistence
             
         }
 
-        public DbSet<Census> Census { get; set; }
+        public DbSet<CensusEntry> CensusEntries { get; set; }
+        public DbSet<Bunny> Bunny { get; set; }
     }
 }
