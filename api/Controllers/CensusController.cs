@@ -22,11 +22,19 @@ namespace api.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetCensusEntriesAll()
         { 
             var censusEntries = await context.CensusEntries.Include(c => c.Bunny).ToListAsync();
             
             return Ok(censusEntries);
+        }
+        
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBunnyById(int id)
+        {
+            var bunny = await context.Bunny.FindAsync(id);
+            
+            return Ok(bunny);
         }
 
         [HttpPost]
