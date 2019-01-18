@@ -29,7 +29,7 @@ namespace api.Controllers
             return Ok(censusEntries);
         }
         
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetBunny")]
         public async Task<IActionResult> GetBunnyById(int id)
         {
             var bunny = await context.Bunny.FindAsync(id);
@@ -38,9 +38,13 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Bunny bunny)
+        public async Task<IActionResult> Create([FromBody]Bunny bunny)
         {
-            return Ok(bunny);
+            context.Bunny.Add(bunny);
+            await context.SaveChangesAsync();
+            var bunnyUri = Url.Link("GetBunny", new {id = bunny.Id});
+            
+            return Created(bunnyUri, bunny);
         }
     }
 }
